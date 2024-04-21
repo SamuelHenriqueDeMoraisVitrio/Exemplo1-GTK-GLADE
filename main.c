@@ -7,7 +7,7 @@ GtkLabel *escreva;
 
 void button_Clicked(GtkWidget *widget, gpointer data){
 
-  g_print("\n\tBotão clicado\n");
+  printf("\n\tBotão clicado\n");
 }
 
 void on_TelaP_destroy(GtkWidget *widget){
