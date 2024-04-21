@@ -5,11 +5,11 @@ NOME = EXE
 START = echo "" && echo "Compilação concluida. Iniciando..." && echo "" && echo "" && ./$(NOME)
 
 nome: clear
-	$(COMP) $(OPC) -o $(NOME) *.c $(GTK)
+	$(COMP) $(OPC) -o $(NOME) *.c $(GTK) -rdynamic
 	@$(START)
 
 compile: clear
-	$(COMP) $(OPC) -o $(NOME) *.c $(GTK)
+	$(COMP) $(OPC) -o $(NOME) *.c $(GTK) -rdynamic
 
 clear:
 	rm -f EXE
