@@ -3,14 +3,14 @@
 
 GtkEntry *ler;
 GtkLabel *escreva;
-//GtkButton *pressione;
+GtkWidget *pressione;
 
 void button_Clicked(GtkWidget *widget, gpointer data){
 
   printf("\n\tBotão clicado\n");
 }
 
-void on_TelaP_destroy(GtkWidget *widget){
+void on_TelaP(GtkWidget *widget){
   gtk_main_quit();
 }
 
@@ -22,12 +22,11 @@ int main(int numArgs, char *nomArgs[]){
 
   arquivo = gtk_builder_new_from_file("IU.glade");
   tela1 = GTK_WIDGET(gtk_builder_get_object(arquivo, "TelaP"));
+  pressione = GTK_WIDGET(gtk_builder_get_object(arquivo, "butao"));
 
-  gtk_builder_add_callback_symbol(arquivo, "on_butao_clicked", G_CALLBACK(button_Clicked));
+  g_signal_connect(tela1, "destroy", G_CALLBACK(on_TelaP), NULL);
 
-  gtk_builder_connect_signals(arquivo, NULL);
-
-  g_signal_connect(tela1, "destroy", G_CALLBACK(on_TelaP_destroy), NULL);
+  g_signal_connect(pressione, "clicked", G_CALLBACK(button_Clicked), NULL);
 
   gtk_widget_show(tela1);
 
