@@ -24,6 +24,8 @@ void escrever_na_telaP(){
 }
 
 void on_TelaP_destroy(GtkWidget *widget, gpointer data){
+
+  system("clear");
   gtk_main_quit();
 }
 
