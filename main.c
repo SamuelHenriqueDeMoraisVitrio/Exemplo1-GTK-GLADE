@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <gtk/gtk.h>
+#include <stdlib.h>
 
 void button_Clicked();
 void escrever_na_telaP();
@@ -9,6 +10,8 @@ GtkEntry *ler;
 GtkLabel *escreva;
 
 void button_Clicked(GtkWidget *widget, gpointer data){
+
+  system("clear");
 
   escrever_na_telaP();
 }
