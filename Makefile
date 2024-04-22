@@ -12,7 +12,7 @@ compile: clear
 	$(COMP) $(OPC) -o $(NOME) *.c $(GTK) -rdynamic
 
 clear:
-	rm -f EXE
+	rm -f EXE .IU.glade.swp .main.c.swp
 	clear
 
 start:
